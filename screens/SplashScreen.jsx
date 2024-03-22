@@ -1,15 +1,14 @@
 import { Text, View, StyleSheet, Image, StatusBar } from "react-native";
 import React, { useEffect } from "react";
 import Logo from "../images/Liftlabs (1)-cropped 4.png";
-import { useNavigation } from "@react-navigation/native";
 
-export default function SplashScreen() {
-  const navigation = useNavigation();
-
+export default function SplashScreen({ setIsLoading }) {
   useEffect(() => {
-    setTimeout(() => {
-      navigation.navigate("HomeScreen");
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
     }, 3000);
+
+    return () => clearTimeout(timeout);
   }, []);
   return (
     <View style={styles.container}>
