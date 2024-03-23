@@ -1,10 +1,10 @@
 import { Text, View, StyleSheet, Image, StatusBar } from "react-native";
-import Logo from "../images/Liftlabs (1)-cropped 4.png";
-export default function HomeScreen() {
+
+export default function ExerciseScreen() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
-      <Text style={styles.text}>Home Screen</Text>
+      <Text style={styles.text}>Exercise Screen</Text>
     </View>
   );
 }
