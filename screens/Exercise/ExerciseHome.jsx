@@ -5,7 +5,7 @@ import ExerciseBack from "./ExerciseSlides/ExerciseBack";
 import LeftBtn from "../../images/Vector.png";
 import RightBtn from "../../images/Vector-2.png";
 
-export default function ExerciseHome() {
+export default function ExerciseHome({ navigation }) {
   const [showComponent1, setShowComponent1] = useState(true);
   const [showComponent2, setShowComponent2] = useState(false);
 
@@ -20,8 +20,8 @@ export default function ExerciseHome() {
   };
   return (
     <View style={styles.container}>
-      {showComponent1 && <ExerciseFront />}
-      {showComponent2 && <ExerciseBack />}
+      {showComponent1 && <ExerciseFront navigation={navigation} />}
+      {showComponent2 && <ExerciseBack navigation={navigation} />}
       <View style={styles.swipeContainer}>
         <Text style={styles.text}>Swipe</Text>
         <View style={styles.swipeBtns}>

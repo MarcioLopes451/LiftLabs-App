@@ -1,21 +1,15 @@
-import { Text, View, StyleSheet, Image, StatusBar } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  StatusBar,
+  Pressable,
+} from "react-native";
 import BackImg from "../../../images/back img-Photoroom.png";
 import YellowCircle from "../../../images/Vector-3.png";
-import Data from "../../../data/data.json";
-import { useState } from "react";
 
-export default function ExerciseBack() {
-  const [filteredExercises, setFilteredExercises] = useState([]);
-  const [selectedType, setSelectedType] = useState("");
-
-  const handleFilterByType = (category) => {
-    setSelectedType(selectedType === category ? null : category);
-
-    const filteredExercise = Data.filter(
-      (exercise) => exercise.category === category
-    );
-    setFilteredExercises(filteredExercise);
-  };
+export default function ExerciseBack({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -26,28 +20,48 @@ export default function ExerciseBack() {
             position: "absolute",
             top: 80,
             left: -70,
-            display: "flex",
-            justifyContent: "space-between",
-            flexDirection: "row-reverse",
-            width: 130,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>Traps</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "traps",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row-reverse",
+              width: 130,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>Traps</Text>
+          </Pressable>
         </View>
         <View
           style={{
             position: "absolute",
             top: 160,
             left: -100,
-            display: "flex",
-            justifyContent: "space-between",
-            flexDirection: "row-reverse",
-            width: 130,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>Triceps</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "triceps",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row-reverse",
+              width: 130,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>Triceps</Text>
+          </Pressable>
         </View>
         <View
           style={{
@@ -60,8 +74,22 @@ export default function ExerciseBack() {
             width: 130,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>Glutes</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "glutes",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row-reverse",
+              width: 130,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>Glutes</Text>
+          </Pressable>
         </View>
         <View
           style={{
@@ -74,8 +102,22 @@ export default function ExerciseBack() {
             width: 130,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>Calves</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "calves",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row-reverse",
+              width: 130,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>Calves</Text>
+          </Pressable>
         </View>
         <View
           style={{
@@ -88,8 +130,22 @@ export default function ExerciseBack() {
             width: 120,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>Lats</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "lats",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row",
+              width: 120,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>Lats</Text>
+          </Pressable>
         </View>
         <View
           style={{
@@ -102,8 +158,22 @@ export default function ExerciseBack() {
             width: 185,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>Lower Back</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "lower back",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row",
+              width: 185,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>Lower Back</Text>
+          </Pressable>
         </View>
         <View
           style={{
@@ -116,8 +186,22 @@ export default function ExerciseBack() {
             width: 160,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>Hamstrings</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "hamstrings",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row",
+              width: 160,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>Hamstrings</Text>
+          </Pressable>
         </View>
       </View>
     </View>
