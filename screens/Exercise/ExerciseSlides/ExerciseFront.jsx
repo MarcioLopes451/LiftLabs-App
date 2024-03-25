@@ -20,14 +20,22 @@ export default function ExerciseFront({ navigation }) {
             position: "absolute",
             top: 120,
             left: -100,
-            display: "flex",
-            justifyContent: "space-between",
-            flexDirection: "row-reverse",
-            width: 130,
           }}
         >
-          <Image source={YellowCircle} />
-          <Pressable onPress={() => navigation.navigate()}>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "shoulders",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row-reverse",
+              width: 130,
+            }}
+          >
+            <Image source={YellowCircle} />
             <Text style={styles.text}>Shoulders</Text>
           </Pressable>
         </View>
@@ -36,56 +44,96 @@ export default function ExerciseFront({ navigation }) {
             position: "absolute",
             top: 180,
             left: -100,
-            display: "flex",
-            justifyContent: "space-between",
-            flexDirection: "row-reverse",
-            width: 130,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>Biceps</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "biceps",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row-reverse",
+              width: 130,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>Biceps</Text>
+          </Pressable>
         </View>
         <View
           style={{
             position: "absolute",
             top: 300,
             left: -80,
-            display: "flex",
-            justifyContent: "space-between",
-            flexDirection: "row-reverse",
-            width: 130,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>Quads</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "quadriceps",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row-reverse",
+              width: 130,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>Quads</Text>
+          </Pressable>
         </View>
         <View
           style={{
             position: "absolute",
             top: 140,
             left: 100,
-            display: "flex",
-            justifyContent: "space-between",
-            flexDirection: "row",
-            width: 120,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>Chest</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "chest",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row",
+              width: 120,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>Chest</Text>
+          </Pressable>
         </View>
         <View
           style={{
             position: "absolute",
             top: 210,
             left: 80,
-            display: "flex",
-            justifyContent: "space-between",
-            flexDirection: "row",
-            width: 175,
           }}
         >
-          <Image source={YellowCircle} />
-          <Text style={styles.text}>abdominal</Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate("ExerciseSection", {
+                primaryMuscles: "abdominals",
+              })
+            }
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: "row",
+              width: 175,
+            }}
+          >
+            <Image source={YellowCircle} />
+            <Text style={styles.text}>abdominals</Text>
+          </Pressable>
         </View>
       </View>
     </View>
