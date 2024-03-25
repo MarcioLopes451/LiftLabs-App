@@ -1,8 +1,21 @@
 import { Text, View, StyleSheet, Image, StatusBar } from "react-native";
 import BackImg from "../../../images/back img-Photoroom.png";
 import YellowCircle from "../../../images/Vector-3.png";
+import Data from "../../../data/data.json";
+import { useState } from "react";
 
 export default function ExerciseBack() {
+  const [filteredExercises, setFilteredExercises] = useState([]);
+  const [selectedType, setSelectedType] = useState("");
+
+  const handleFilterByType = (category) => {
+    setSelectedType(selectedType === category ? null : category);
+
+    const filteredExercise = Data.filter(
+      (exercise) => exercise.category === category
+    );
+    setFilteredExercises(filteredExercise);
+  };
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />

@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import SplashScreen from "./screens/SplashScreen";
 import HomeScreen from "./screens/HomeScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import Logo from "./images/Liftlabs (1)-cropped 4.png";
 import ExerciseImg from "./images/6643367_diet_dumbbells_exercise_fitness_gym_icon.png";
 import ProgressImg from "./images/4308198_chart_flowchart_graph_growth_increase_icon.png";
@@ -14,8 +15,10 @@ import ExerciseScreen from "./screens/Exercise/ExerciseScreen";
 import WorkoutScreen from "./screens/Workout/WorkoutScreen";
 import ProgressScreen from "./screens/Progress/ProgressScreen";
 import SettingsScreen from "./screens/Settings/SettingsScreen";
+import ExerciseSectionScreen from "./screens/Exercise/ExerciseSectionScreen";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -66,7 +69,7 @@ export default function App() {
           },
           headerStyle: {
             backgroundColor: "#141619",
-            borderBottomWidth: 1, // Add a border at the bottom of the header
+            borderBottomWidth: 1,
             borderBottomColor: "gray",
           },
           headerTitleStyle: {

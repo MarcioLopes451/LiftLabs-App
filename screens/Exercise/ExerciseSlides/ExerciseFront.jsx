@@ -1,8 +1,15 @@
-import { Text, View, StyleSheet, Image, StatusBar } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  StatusBar,
+  Pressable,
+} from "react-native";
 import FrontImg from "../../../images/front img-Photoroom.png";
 import YellowCircle from "../../../images/Vector-3.png";
 
-export default function ExerciseFront() {
+export default function ExerciseFront({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -20,7 +27,9 @@ export default function ExerciseFront() {
           }}
         >
           <Image source={YellowCircle} />
-          <Text style={styles.text}>Shoulders</Text>
+          <Pressable onPress={() => navigation.navigate()}>
+            <Text style={styles.text}>Shoulders</Text>
+          </Pressable>
         </View>
         <View
           style={{
