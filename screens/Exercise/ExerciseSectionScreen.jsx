@@ -1,11 +1,4 @@
-import {
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  FlatList,
-  Pressable,
-} from "react-native";
+import { Text, View, StyleSheet, FlatList, Pressable } from "react-native";
 import { data } from "../../data/data";
 import { useState, useEffect } from "react";
 import { Images } from "../../utils/Images";
