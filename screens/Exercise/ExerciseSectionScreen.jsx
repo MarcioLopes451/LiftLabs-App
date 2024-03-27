@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, FlatList, Pressable } from "react-native";
-import { data } from "../../data/data";
+import { data } from "../../data";
 import { useState, useEffect } from "react";
 import { Images } from "../../utils/Images";
 import ExerciseImage from "../../utils/ExerciseImage";

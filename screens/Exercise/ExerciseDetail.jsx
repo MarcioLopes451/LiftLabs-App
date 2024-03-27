@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, Image, StatusBar } from "react-native";
-import { data } from "../../data/data";
+import { data } from "../../data";
 
 export default function ExerciseDetail({ route }) {
   const { id } = route.params;
