@@ -59,6 +59,10 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
+    fontSize: 15,
+    textAlign: "center",
+    fontWeight: "bold",
+    paddingTop: 20,
   },
   exerciseContainer: {
     width: 180,
