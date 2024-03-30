@@ -21,15 +21,15 @@ export default function ExerciseDetail({ route }) {
   const exerciseDetail = data.find((exercise) => exercise.id === id);
   if (!exerciseDetail) throw new Error(`404: exercise not found: ${id}`);
 
-  const breakSentences = (text) => {
-    if (typeof text !== "string") {
+  const formatArrayAsNewLines = (array) => {
+    if (!Array.isArray(array)) {
       return "";
     }
-    // Replace full stops with full stop followed by newline
-    return text.replace(/\. /g, ".\n");
+
+    return array.map((element) => `${element}\n\n`).join("");
   };
 
-  const brokenSentences = breakSentences(exerciseDetail.instructions);
+  const formattedString = formatArrayAsNewLines(exerciseDetail.instructions);
 
   return (
     <View style={styles.container}>
@@ -47,7 +47,10 @@ export default function ExerciseDetail({ route }) {
             {exerciseDetail.name}
           </Text>
           <ExerciseDImage exerciseId={exerciseDetail.id} />
-          <View style={styles.detailContainer}>
+        </View>
+
+        <ScrollView horizontal={true} contentContainerStyle={{ width: 700 }}>
+          <View style={[styles.detailContainer, { marginLeft: 30 }]}>
             <Text
               style={{
                 fontSize: 20,
@@ -71,7 +74,7 @@ export default function ExerciseDetail({ route }) {
               ))}
             </Text>
           </View>
-          <View style={styles.detailContainer}>
+          <View style={[styles.detailContainer, { marginLeft: 30 }]}>
             <Text
               style={{
                 fontSize: 20,
@@ -83,9 +86,9 @@ export default function ExerciseDetail({ route }) {
             >
               Instructions
             </Text>
-            <Text style={styles.text2}>{exerciseDetail.instructions}</Text>
+            <Text style={styles.text2}>{formattedString}</Text>
           </View>
-        </View>
+        </ScrollView>
       </ScrollView>
     </View>
   );
@@ -99,6 +102,8 @@ const styles = StyleSheet.create({
   },
   exerciseContainer: {
     marginTop: 20,
+    justifyContent: "center",
+    alignItems: "center",
   },
   text: {
     fontSize: 15,
@@ -115,10 +120,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     padding: 10,
   },
-
   detailContainer: {
     backgroundColor: "#141619",
     width: 300,
     marginTop: 30,
+    borderRadius: 10,
+    height: "100%",
   },
 });
