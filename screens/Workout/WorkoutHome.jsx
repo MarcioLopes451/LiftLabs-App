@@ -26,20 +26,24 @@ export default function WorkoutHome({ navigation }) {
             </View>
           </View>
         </Pressable>
-        <View style={styles.workoutContainer}>
-          <Image source={PullDayImg} style={{ width: 350, height: 175 }} />
-          <View style={styles.forceContainer}>
-            <Text style={styles.forceTitle}>PULL DAY</Text>
-            <Text style={styles.forceDesc}>Back & Biceps Workouts</Text>
+        <Pressable onPress={() => navigation.navigate("PullDay")}>
+          <View style={styles.workoutContainer}>
+            <Image source={PullDayImg} style={{ width: 350, height: 175 }} />
+            <View style={styles.forceContainer}>
+              <Text style={styles.forceTitle}>PULL DAY</Text>
+              <Text style={styles.forceDesc}>Back & Biceps Workouts</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.workoutContainer}>
-          <Image source={LegDayImg} style={{ width: 350, height: 175 }} />
-          <View style={styles.forceContainer}>
-            <Text style={styles.forceTitle}>LEG DAY</Text>
-            <Text style={styles.forceDesc}>Leg Workouts</Text>
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate("LegDay")}>
+          <View style={styles.workoutContainer}>
+            <Image source={LegDayImg} style={{ width: 350, height: 175 }} />
+            <View style={styles.forceContainer}>
+              <Text style={styles.forceTitle}>LEG DAY</Text>
+              <Text style={styles.forceDesc}>Leg Workouts</Text>
+            </View>
           </View>
-        </View>
+        </Pressable>
       </ScrollView>
     </View>
   );

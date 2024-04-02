@@ -43,7 +43,10 @@ export const WorkoutImage = ({ exerciseId }) => {
   return (
     <View>
       {imagePaths && imagePaths.length > 0 && (
-        <Image source={imagePaths[0]} style={{ width: 50, height: 50 }} />
+        <Image
+          source={imagePaths[0]}
+          style={{ width: 80, height: 80, borderRadius: 8 }}
+        />
       )}
     </View>
   );
