@@ -5,11 +5,14 @@ import {
   Pressable,
   FlatList,
   ScrollView,
+  Image,
+  SafeAreaView,
 } from "react-native";
 import { data } from "../../data/data";
 import { useState, useEffect } from "react";
 import { Images } from "../../utils/Images";
 import { WorkoutImage } from "../../utils/ExerciseImage";
+import Line from "../../images/Line 10.png";
 
 export default function WorkoutVariations({ navigation, route }) {
   const [imagePaths, setImagePaths] = useState({});
@@ -42,47 +45,52 @@ export default function WorkoutVariations({ navigation, route }) {
   const slicedExercises = shuffledExercises.slice(0, 6);
 
   const renderItem = ({ item }) => (
-    <Pressable style={styles.exerciseContainer}>
-      <WorkoutImage exerciseId={item.id} />
-      <Text key={item.id} style={styles.text}>
-        {item.name}
-      </Text>
-      <Text style={styles.text}>{item.primaryMuscles}</Text>
+    <Pressable
+      style={styles.exerciseContainer}
+      onPress={() => navigation.navigate("ExerciseDetail", { id: item.id })}
+    >
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 10,
+        }}
+      >
+        <WorkoutImage exerciseId={item.id} />
+        <Text key={item.id} style={styles.text}>
+          {item.name}
+        </Text>
+      </View>
+      <Text style={styles.muscleType}>{item.primaryMuscles}</Text>
     </Pressable>
   );
 
   return (
     <View style={styles.container}>
-      <View style={{ marginTop: 100 }}>
+      <View style={{ marginTop: 30 }}>
         <Text style={styles.title}>{titles}</Text>
         <Text style={styles.titleText}>{text}</Text>
       </View>
       <View style={styles.workoutContainer}>
-        <View
-          style={{
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexDirection: "row",
-          }}
-        >
+        <View style={styles.titleContainer}>
           <View>
-            <Text style={{ color: "white" }}>Exercises</Text>
-            <Text style={{ color: "white" }}>{slicedExercises.length}</Text>
+            <Text style={styles.exerciseDurationText}>Exercises</Text>
+            <Text style={styles.exerciseDurationText2}>
+              {slicedExercises.length}
+            </Text>
           </View>
+          <Image source={Line} />
           <View>
-            <Text style={{ color: "white" }}>Duration</Text>
-            <Text style={{ color: "white" }}>40-55mins</Text>
+            <Text style={styles.exerciseDurationText}>Duration</Text>
+            <Text style={styles.exerciseDurationText2}>40-55mins</Text>
           </View>
         </View>
-        <ScrollView>
-          <View>
-            <FlatList
-              data={slicedExercises}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.id.toString()}
-            />
-          </View>
-        </ScrollView>
+        <FlatList
+          data={slicedExercises}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id.toString()}
+        />
       </View>
     </View>
   );
@@ -93,21 +101,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#1B2126",
     alignItems: "start",
+    paddingLeft: 7,
     justifyContent: "center",
   },
   text: {
     color: "white",
     fontSize: 15,
-    textAlign: "center",
     fontWeight: "bold",
-    paddingTop: 20,
     width: 130,
   },
   title: {
     color: "#F9C305",
     fontSize: 24,
     fontWeight: "bold",
-    marginTop: 30,
     textAlign: "left",
     fontStyle: "italic",
   },
@@ -124,18 +130,45 @@ const styles = StyleSheet.create({
     width: 376,
     backgroundColor: "#141619",
     marginTop: 40,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 20,
+    borderRadius: 8,
+    height: 450,
+    paddingBottom: 10,
   },
   exerciseContainer: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
+    gap: 50,
+    marginTop: 20,
+    flex: 1,
+  },
+  exerciseDurationText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    fontStyle: "italic",
+    color: "white",
+    textAlign: "center",
+  },
+  exerciseDurationText2: {
+    fontSize: 24,
+    fontWeight: "bold",
+    fontStyle: "italic",
+    color: "#F9C305",
+    textAlign: "center",
+    marginTop: 5,
+  },
+  muscleType: {
+    color: "#F9C305",
+    fontSize: 15,
+    fontWeight: "bold",
+    fontStyle: "italic",
+  },
+  titleContainer: {
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
   },
 });
-
-{
-  /*<FlatList
-          data={exercises}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id.toString()}
-          numColumns={numColumns}
-        /> */
-}

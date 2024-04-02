@@ -1,15 +1,15 @@
 import { View, StyleSheet, ScrollView, Pressable } from "react-native";
 import React from "react";
 import WorkoutSection from "../WorkoutSection";
-import PushDayImg from "../../../images/AdobeStock_331562231.jpeg";
+import PullDayImg from "../../../images/AdobeStock_320459521.jpeg";
 import Variations from "../Variations";
 
-export default function PushDay({ navigation }) {
+export default function PullDay({ navigation }) {
   return (
     <>
       <WorkoutSection
-        image={PushDayImg}
-        title={"PUSH DAY"}
+        image={PullDayImg}
+        title={"PULL DAY"}
         description={
           "With unlimited variations to this workout plan you can easily maintain your training"
         }
@@ -19,9 +19,9 @@ export default function PushDay({ navigation }) {
           <Pressable
             onPress={() =>
               navigation.navigate("WorkoutVariation", {
-                primaryMuscles: ["chest", "triceps"],
-                titles: "PUSH DAY VARIATION 1",
-                text: "Total Push workout plan to get in shape & build a foundation in weight training.",
+                primaryMuscles: ["lats", "biceps"],
+                titles: "PULL DAY VARIATION 1",
+                text: "Total Pull workout plan to get in shape & build a foundation in weight training.",
               })
             }
           >
@@ -31,9 +31,9 @@ export default function PushDay({ navigation }) {
           <Pressable
             onPress={() =>
               navigation.navigate("WorkoutVariation", {
-                primaryMuscles: ["chest", "triceps", "shoulders"],
-                titles: "PUSH DAY VARIATION 2",
-                text: "Total Push workout plan to get in shape & build a foundation in weight training.",
+                primaryMuscles: ["lats", "biceps", "traps", "lower back"],
+                titles: "PULL DAY VARIATION 2",
+                text: "Total Pull workout plan to get in shape & build a foundation in weight training.",
               })
             }
           >
@@ -42,9 +42,9 @@ export default function PushDay({ navigation }) {
           <Pressable
             onPress={() =>
               navigation.navigate("WorkoutVariation", {
-                primaryMuscles: ["chest", "triceps", "shoulders"],
-                titles: "PUSH DAY VARIATION 3",
-                text: "Total Push workout plan to get in shape & build a foundation in weight training.",
+                primaryMuscles: ["lats", "traps", "lower back"],
+                titles: "PULL DAY VARIATION 3",
+                text: "Total Pull workout plan to get in shape & build a foundation in weight training.",
               })
             }
           >
@@ -53,9 +53,9 @@ export default function PushDay({ navigation }) {
           <Pressable
             onPress={() =>
               navigation.navigate("WorkoutVariation", {
-                primaryMuscles: ["chest", "triceps", "shoulders"],
-                titles: "PUSH DAY VARIATION 4",
-                text: "Total Push workout plan to get in shape & build a foundation in weight training.",
+                primaryMuscles: ["lats", "biceps", "traps"],
+                titles: "PULL DAY VARIATION 4",
+                text: "Total Pull workout plan to get in shape & build a foundation in weight training.",
               })
             }
           >
