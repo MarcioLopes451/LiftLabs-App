@@ -36,3 +36,15 @@ export const ExerciseDImage = ({ exerciseId }) => {
     </View>
   );
 };
+
+export const WorkoutImage = ({ exerciseId }) => {
+  const imagePaths = Images[exerciseId];
+
+  return (
+    <View>
+      {imagePaths && imagePaths.length > 0 && (
+        <Image source={imagePaths[0]} style={{ width: 50, height: 50 }} />
+      )}
+    </View>
+  );
+};

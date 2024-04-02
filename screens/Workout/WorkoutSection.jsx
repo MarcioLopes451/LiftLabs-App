@@ -13,7 +13,7 @@ export default function WorkoutSection({ image, title, description }) {
           style={{ ...StyleSheet.absoluteFillObject }}
         />
       </View>
-      <View style={{ marginTop: -70 }}>
+      <View style={{ marginTop: -90 }}>
         <Text style={styles.forceTitle}>{title} WORKOUTS</Text>
         <Text style={styles.forceDesc}>{description}</Text>
       </View>
