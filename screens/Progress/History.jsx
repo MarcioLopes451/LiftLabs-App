@@ -32,7 +32,7 @@ export default function History() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#1B2126",
-    marginTop: 100,
+    marginTop: 30,
     flex: 1,
     paddingLeft: 20,
     paddingRight: 20,

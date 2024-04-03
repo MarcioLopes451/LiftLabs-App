@@ -1,16 +1,16 @@
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
 import YourActivity from "./YourActivity";
 import History from "./History";
+import Achievements from "./Achievements";
 
-const Stack = createStackNavigator();
 export default function ProgressScreen() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <YourActivity />
       <History />
-    </View>
+      <Achievements />
+    </ScrollView>
   );
 }
 
@@ -18,5 +18,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#1B2126",
+    position: "relative",
   },
 });
