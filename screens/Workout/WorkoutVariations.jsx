@@ -4,9 +4,7 @@ import {
   StyleSheet,
   Pressable,
   FlatList,
-  ScrollView,
   Image,
-  SafeAreaView,
 } from "react-native";
 import { data } from "../../data/data";
 import { useState, useEffect } from "react";
