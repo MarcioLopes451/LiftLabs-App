@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image, ScrollView } from "react-native";
+import { StyleSheet, View, Image, ScrollView, Pressable } from "react-native";
 import React from "react";
 import SettingLinks from "./SettingLinks";
 import MyProfileImg from "../../images/1564534_customer_man_user_account_profile_icon.png";
@@ -7,13 +7,24 @@ import CalenderImg from "../../images/3671721_calendar_icon.png";
 import SocialLinks from "./SocialLinks";
 import Logo from "../../images/Liftlabs (1)-cropped 4.png";
 
-export default function SettingsHome() {
+export default function SettingsHome({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <SettingLinks text={"My Profile"} img={MyProfileImg} />
-        <SettingLinks text={"Units of Measurements"} img={MeasurementsImg} />
-        <SettingLinks text={"Workout Reminders"} img={CalenderImg} />
+        <View style={{ gap: 20 }}>
+          <Pressable onPress={() => navigation.navigate("MyProfile")}>
+            <SettingLinks text={"My Profile"} img={MyProfileImg} />
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate("Measurements")}>
+            <SettingLinks
+              text={"Units of Measurements"}
+              img={MeasurementsImg}
+            />
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate("WorkoutReminders")}>
+            <SettingLinks text={"Workout Reminders"} img={CalenderImg} />
+          </Pressable>
+        </View>
         <SocialLinks />
         <View style={{ justifyContent: "center", alignItems: "center" }}>
           <Image
@@ -37,6 +48,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#1B2126",
     alignItems: "center",
     paddingTop: 20,
-    gap: 20,
   },
 });
