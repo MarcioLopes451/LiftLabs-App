@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import SplashScreen from "./screens/SplashScreen";
-import HomeScreen from "./screens/HomeScreen";
+import HomeScreen from "./screens/Home/HomeScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Logo from "./images/Liftlabs (1)-cropped 4.png";
 import ExerciseImg from "./images/6643367_diet_dumbbells_exercise_fitness_gym_icon.png";
