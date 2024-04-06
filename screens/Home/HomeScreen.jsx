@@ -1,23 +1,23 @@
-import { Text, View, StyleSheet, Image, StatusBar } from "react-native";
-import WorkoutOfTheDay from "./WorkoutOfTheDay";
+import { createStackNavigator } from "@react-navigation/stack";
+import Home from "./Home";
+import ExerciseDetail from "../Exercise/ExerciseDetail";
 
-export default function HomeScreen() {
+const Stack = createStackNavigator();
+export default function HomeScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="light-content" />
-      <WorkoutOfTheDay />
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen
+        name="HomeScreen"
+        component={Home}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="ExerciseDetail"
+        component={ExerciseDetail}
+        navigation={navigation}
+      />
+    </Stack.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#1B2126",
-    alignItems: "start",
-    zIndex: 9,
-  },
-  text: {
-    color: "white",
-  },
-});

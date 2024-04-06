@@ -34,7 +34,9 @@ const styles = StyleSheet.create({
     height: 200,
     alignSelf: "stretch",
     paddingTop: 80,
-    height: 420,
+    height: 430,
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 40,
   },
   workoutContainer: {
     paddingLeft: 10,
