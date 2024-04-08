@@ -18,7 +18,7 @@ export default function LegDay({ navigation }) {
         <ScrollView contentContainerStyle={{ gap: 30 }}>
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["quadriceps", "hamstrings", "calves"],
                 titles: "LEG DAY VARIATION 1",
                 text: "Total Leg workout plan to get in shape & build a foundation in weight training.",
@@ -30,7 +30,7 @@ export default function LegDay({ navigation }) {
 
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["quadriceps", "hamstrings", "glutes"],
                 titles: "LEG DAY VARIATION 2",
                 text: "Total Leg workout plan to get in shape & build a foundation in weight training.",
@@ -41,7 +41,7 @@ export default function LegDay({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: [
                   "quadriceps",
                   "hamstrings",
@@ -57,7 +57,7 @@ export default function LegDay({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["quadriceps", "hamstrings"],
                 titles: "LEG DAY VARIATION 4",
                 text: "Total Leg workout plan to get in shape & build a foundation in weight training.",

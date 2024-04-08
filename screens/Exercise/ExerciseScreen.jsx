@@ -1,10 +1,9 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { View, Image, Text, TouchableOpacity } from "react-native";
+import { View, Image, Text } from "react-native";
 import ExerciseHome from "./ExerciseHome";
 import ExerciseSectionScreen from "./ExerciseSectionScreen";
 import ExerciseDetail from "./ExerciseDetail";
 import Crown from "../../images/8541713_crown_icon.png";
-import BackButton from "../../images/2849832_arrows_navigation_arrow_left_back_icon (3).png";
 
 const Stack = createStackNavigator();
 
@@ -43,9 +42,9 @@ export default function ExerciseScreen() {
         }}
       />
       <Stack.Screen
-        name="ExerciseSection"
+        name="Exercise Section"
         component={ExerciseSectionScreen}
-        options={({ navigation }) => ({
+        options={{
           headerTitleStyle: {
             display: "none",
           },
@@ -71,12 +70,7 @@ export default function ExerciseScreen() {
               </Text>
             </View>
           ),
-          headerLeft: () => (
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Image source={BackButton} style={{ width: 30, height: 30 }} />
-            </TouchableOpacity>
-          ),
-        })}
+        }}
       />
       <Stack.Screen
         name="ExerciseDetail"

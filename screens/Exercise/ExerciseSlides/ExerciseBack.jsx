@@ -33,7 +33,7 @@ export default function ExerciseBack({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "traps",
               })
             }
@@ -57,7 +57,7 @@ export default function ExerciseBack({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "triceps",
               })
             }
@@ -85,7 +85,7 @@ export default function ExerciseBack({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "glutes",
               })
             }
@@ -113,7 +113,7 @@ export default function ExerciseBack({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "calves",
               })
             }
@@ -141,7 +141,7 @@ export default function ExerciseBack({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "lats",
               })
             }
@@ -169,7 +169,7 @@ export default function ExerciseBack({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "lower back",
               })
             }
@@ -197,7 +197,7 @@ export default function ExerciseBack({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "hamstrings",
               })
             }

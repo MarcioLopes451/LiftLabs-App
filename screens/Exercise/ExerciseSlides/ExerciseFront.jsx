@@ -33,7 +33,7 @@ export default function ExerciseFront({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "shoulders",
               })
             }
@@ -57,7 +57,7 @@ export default function ExerciseFront({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "biceps",
               })
             }
@@ -81,7 +81,7 @@ export default function ExerciseFront({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "quadriceps",
               })
             }
@@ -105,7 +105,7 @@ export default function ExerciseFront({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "chest",
               })
             }
@@ -129,7 +129,7 @@ export default function ExerciseFront({ navigation }) {
         >
           <Pressable
             onPress={() =>
-              navigation.navigate("ExerciseSection", {
+              navigation.navigate("Exercise Section", {
                 primaryMuscles: "abdominals",
               })
             }

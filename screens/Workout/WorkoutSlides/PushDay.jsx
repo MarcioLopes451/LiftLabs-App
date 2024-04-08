@@ -18,7 +18,7 @@ export default function PushDay({ navigation }) {
         <ScrollView contentContainerStyle={{ gap: 30 }}>
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["chest", "triceps"],
                 titles: "PUSH DAY VARIATION 1",
                 text: "Total Push workout plan to get in shape & build a foundation in weight training.",
@@ -30,7 +30,7 @@ export default function PushDay({ navigation }) {
 
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["chest", "triceps", "shoulders"],
                 titles: "PUSH DAY VARIATION 2",
                 text: "Total Push workout plan to get in shape & build a foundation in weight training.",
@@ -41,7 +41,7 @@ export default function PushDay({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["chest", "triceps", "shoulders"],
                 titles: "PUSH DAY VARIATION 3",
                 text: "Total Push workout plan to get in shape & build a foundation in weight training.",
@@ -52,7 +52,7 @@ export default function PushDay({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["chest", "triceps", "shoulders"],
                 titles: "PUSH DAY VARIATION 4",
                 text: "Total Push workout plan to get in shape & build a foundation in weight training.",
