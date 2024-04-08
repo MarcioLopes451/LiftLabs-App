@@ -4,6 +4,7 @@ import ExerciseFront from "./ExerciseSlides/ExerciseFront";
 import ExerciseBack from "./ExerciseSlides/ExerciseBack";
 import LeftBtn from "../../images/Vector.png";
 import RightBtn from "../../images/Vector-2.png";
+import { useFonts, Inter_500Medium } from "@expo-google-fonts/inter";
 
 export default function ExerciseHome({ navigation }) {
   const [showComponent1, setShowComponent1] = useState(true);
@@ -18,21 +19,31 @@ export default function ExerciseHome({ navigation }) {
     setShowComponent1(false);
     setShowComponent2(true);
   };
+
+  let [fontsLoaded] = useFonts({
+    Inter_500Medium,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       {showComponent1 && <ExerciseFront navigation={navigation} />}
       {showComponent2 && <ExerciseBack navigation={navigation} />}
       <View style={styles.swipeContainer}>
-        <Text style={styles.text}>Swipe</Text>
-        <View style={styles.swipeBtns}>
-          <Pressable onPress={showFirstComponent}>
-            <Image source={LeftBtn} />
-          </Pressable>
-          <Pressable onPress={showSecondComponent}>
-            <Image source={RightBtn} />
-          </Pressable>
+        <View style={{ justifyContent: "center", alignItems: "center" }}>
+          <Text style={styles.text}>Swipe</Text>
+          <View style={styles.swipeBtn}>
+            <Pressable onPress={showFirstComponent}>
+              <Image source={LeftBtn} />
+            </Pressable>
+            <Pressable onPress={showSecondComponent}>
+              <Image source={RightBtn} />
+            </Pressable>
+          </View>
+          <Text style={styles.text}>180°</Text>
         </View>
-        <Text style={styles.text}>180°</Text>
       </View>
     </View>
   );
@@ -47,6 +58,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
+    fontFamily: "Inter_500Medium",
+    fontSize: 17,
+    opacity: 0.9,
   },
   swipeContainer: {
     width: 200,
@@ -56,11 +70,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     alignItems: "center",
     justifyContent: "center",
+    borderRadius: 8,
   },
-  swipeBtns: {
+  swipeBtn: {
     alignItems: "center",
     flexDirection: "row",
-    gap: 20,
+    gap: 50,
     marginTop: 10,
+    paddingBottom: 10,
+    paddingTop: 10,
   },
 });

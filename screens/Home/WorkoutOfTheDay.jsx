@@ -1,9 +1,19 @@
 import React, { useRef } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Video } from "expo-av";
+import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
 export default function WorkoutOfTheDay() {
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+  });
+
   const vid = useRef(null);
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.workoutContainer}>
@@ -33,10 +43,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#141619",
     height: 200,
     alignSelf: "stretch",
-    paddingTop: 80,
-    height: 430,
-    borderBottomRightRadius: 40,
-    borderBottomLeftRadius: 40,
+    paddingTop: 60,
+    height: 390,
+    borderBottomRightRadius: 30,
+    borderBottomLeftRadius: 30,
   },
   workoutContainer: {
     paddingLeft: 10,
@@ -44,20 +54,20 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "#F9C305",
-    fontSize: 24,
-    fontWeight: "bold",
+    fontSize: 20,
+    fontFamily: "Inter_600SemiBold",
   },
   description: {
-    fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 16,
     color: "white",
-    marginTop: 10,
+    marginTop: 5,
+    fontFamily: "Inter_600SemiBold",
   },
   text: {
-    fontSize: 15,
-    opacity: 0.6,
+    fontSize: 14,
+    opacity: 0.75,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
     paddingRight: 10,
     marginTop: 10,
   },

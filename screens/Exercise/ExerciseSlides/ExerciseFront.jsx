@@ -8,8 +8,17 @@ import {
 } from "react-native";
 import FrontImg from "../../../images/front img-Photoroom.png";
 import YellowCircle from "../../../images/Vector-3.png";
+import { useFonts, Inter_500Medium } from "@expo-google-fonts/inter";
 
 export default function ExerciseFront({ navigation }) {
+  let [fontsLoaded] = useFonts({
+    Inter_500Medium,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -149,7 +158,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
-    fontSize: 20,
+    fontSize: 17,
+    fontFamily: "Inter_500Medium",
+    opacity: 0.9,
   },
   imageContainer: {
     position: "relative",
