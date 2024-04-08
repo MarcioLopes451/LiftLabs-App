@@ -18,7 +18,7 @@ export default function PullDay({ navigation }) {
         <ScrollView contentContainerStyle={{ gap: 30 }}>
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["lats", "biceps"],
                 titles: "PULL DAY VARIATION 1",
                 text: "Total Pull workout plan to get in shape & build a foundation in weight training.",
@@ -30,7 +30,7 @@ export default function PullDay({ navigation }) {
 
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["lats", "biceps", "traps", "lower back"],
                 titles: "PULL DAY VARIATION 2",
                 text: "Total Pull workout plan to get in shape & build a foundation in weight training.",
@@ -41,7 +41,7 @@ export default function PullDay({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["lats", "traps", "lower back"],
                 titles: "PULL DAY VARIATION 3",
                 text: "Total Pull workout plan to get in shape & build a foundation in weight training.",
@@ -52,7 +52,7 @@ export default function PullDay({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() =>
-              navigation.navigate("WorkoutVariation", {
+              navigation.navigate("Workout Variation", {
                 primaryMuscles: ["lats", "biceps", "traps"],
                 titles: "PULL DAY VARIATION 4",
                 text: "Total Pull workout plan to get in shape & build a foundation in weight training.",

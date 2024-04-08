@@ -17,7 +17,7 @@ export default function WorkoutHome({ navigation }) {
       <ScrollView
         contentContainerStyle={{ display: "flex", gap: 36, marginTop: 42 }}
       >
-        <Pressable onPress={() => navigation.navigate("PushDay")}>
+        <Pressable onPress={() => navigation.navigate("Push Day")}>
           <View style={styles.workoutContainer}>
             <Image source={PushDayImg} style={{ width: 350, height: 175 }} />
             <View style={styles.forceContainer}>
@@ -26,7 +26,7 @@ export default function WorkoutHome({ navigation }) {
             </View>
           </View>
         </Pressable>
-        <Pressable onPress={() => navigation.navigate("PullDay")}>
+        <Pressable onPress={() => navigation.navigate("Pull Day")}>
           <View style={styles.workoutContainer}>
             <Image source={PullDayImg} style={{ width: 350, height: 175 }} />
             <View style={styles.forceContainer}>
@@ -35,7 +35,7 @@ export default function WorkoutHome({ navigation }) {
             </View>
           </View>
         </Pressable>
-        <Pressable onPress={() => navigation.navigate("LegDay")}>
+        <Pressable onPress={() => navigation.navigate("Leg Day")}>
           <View style={styles.workoutContainer}>
             <Image source={LegDayImg} style={{ width: 350, height: 175 }} />
             <View style={styles.forceContainer}>

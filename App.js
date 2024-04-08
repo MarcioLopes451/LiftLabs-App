@@ -8,11 +8,12 @@ import ExerciseImg from "./images/6643367_diet_dumbbells_exercise_fitness_gym_ic
 import ProgressImg from "./images/4308198_chart_flowchart_graph_growth_increase_icon.png";
 import WorkoutImg from "./images/728933_document_edit_file_page_paper_icon.png";
 import SettingsImg from "./images/2849830_multimedia_options_setting_settings_gear_icon.png";
-import { Image } from "react-native";
+import { Image, View, Text } from "react-native";
 import ExerciseScreen from "./screens/Exercise/ExerciseScreen";
 import WorkoutScreen from "./screens/Workout/WorkoutScreen";
 import ProgressScreen from "./screens/Progress/ProgressScreen";
 import SettingsScreen from "./screens/Settings/SettingsScreen";
+import Crown from "./images/8541713_crown_icon.png";
 
 const Tab = createBottomTabNavigator();
 
@@ -88,6 +89,7 @@ export default function App() {
           name="Workout"
           component={WorkoutScreen}
           options={{
+            headerShown: false,
             tabBarIcon: ({ focused }) => (
               <Image
                 source={WorkoutImg}
@@ -114,12 +116,38 @@ export default function App() {
                 }}
               />
             ),
+            headerTitleAlign: "left",
+            headerRight: () => (
+              <View
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginRight: 10,
+                }}
+              >
+                <Image source={Crown} style={{ width: 25, height: 25 }} />
+                <Text style={{ color: "#F9C305", fontWeight: "bold" }}>
+                  Premium
+                </Text>
+              </View>
+            ),
+            headerStyle: {
+              backgroundColor: "#1B2126",
+              borderBottomWidth: 1,
+              borderBottomColor: "gray",
+            },
+            headerTitleStyle: {
+              color: "white",
+            },
           }}
         />
         <Tab.Screen
           name="Settings"
           component={SettingsScreen}
           options={{
+            headerShown: false,
             tabBarIcon: ({ focused }) => (
               <Image
                 source={SettingsImg}
