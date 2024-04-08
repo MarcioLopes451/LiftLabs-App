@@ -3,9 +3,14 @@ import { data } from "../../data/data";
 import { useState, useEffect } from "react";
 import { Images } from "../../utils/Images";
 import { WorkoutImage } from "../../utils/ExerciseImage";
+import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
 export default function TodayWorkouts({ navigation }) {
   const [imagePaths, setImagePaths] = useState({});
+
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+  });
 
   useEffect(() => {
     const paths = {};
@@ -20,6 +25,7 @@ export default function TodayWorkouts({ navigation }) {
   const exercises = data.filter((exercise) =>
     exercise.primaryMuscles.includes("chest")
   );
+
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
@@ -29,6 +35,7 @@ export default function TodayWorkouts({ navigation }) {
     }
     return array;
   };
+
   const shuffledExercises = shuffleArray(exercises);
   const slicedExercises = shuffledExercises.slice(0, 6);
 
@@ -37,14 +44,7 @@ export default function TodayWorkouts({ navigation }) {
       style={styles.exerciseContainer}
       onPress={() => navigation.navigate("ExerciseDetail", { id: item.id })}
     >
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 10,
-        }}
-      >
+      <View style={styles.titleContainer}>
         <WorkoutImage exerciseId={item.id} />
         <Text key={item.id} style={styles.text}>
           {item.name}
@@ -53,7 +53,9 @@ export default function TodayWorkouts({ navigation }) {
       <Text style={styles.muscleType}>{item.primaryMuscles}</Text>
     </Pressable>
   );
-
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <View style={{ marginTop: 30 }}></View>
@@ -79,24 +81,8 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     fontSize: 15,
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
     width: 130,
-  },
-  title: {
-    color: "#F9C305",
-    fontSize: 24,
-    fontWeight: "bold",
-    textAlign: "left",
-    fontStyle: "italic",
-  },
-  titleText: {
-    color: "white",
-    fontSize: 15,
-    textAlign: "left",
-    fontWeight: "bold",
-    paddingTop: 10,
-    width: 238,
-    fontStyle: "italic",
   },
   workoutContainer: {
     width: 376,
@@ -116,30 +102,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flex: 1,
   },
-  exerciseDurationText: {
-    fontSize: 24,
-    fontWeight: "bold",
-    fontStyle: "italic",
-    color: "white",
-    textAlign: "center",
-  },
-  exerciseDurationText2: {
-    fontSize: 24,
-    fontWeight: "bold",
-    fontStyle: "italic",
-    color: "#F9C305",
-    textAlign: "center",
-    marginTop: 5,
-  },
   muscleType: {
     color: "#F9C305",
     fontSize: 15,
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
   },
   titleContainer: {
-    justifyContent: "space-between",
-    alignItems: "center",
     flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
   },
 });
