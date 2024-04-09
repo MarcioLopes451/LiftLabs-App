@@ -1,8 +1,21 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
+import {
+  useFonts,
+  Inter_600SemiBold,
+  Inter_700Bold,
+} from "@expo-google-fonts/inter";
 
 export default function WorkoutSection({ image, title, description }) {
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+    Inter_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <View>
@@ -30,13 +43,11 @@ const styles = StyleSheet.create({
   forceTitle: {
     fontSize: 25,
     color: "#F9C305",
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_700Bold",
     textAlign: "center",
   },
   forceDesc: {
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
     color: "white",
     textAlign: "center",
     width: 260,

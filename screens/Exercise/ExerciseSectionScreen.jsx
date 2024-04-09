@@ -3,6 +3,7 @@ import { data } from "../../data/data";
 import { useState, useEffect } from "react";
 import { Images } from "../../utils/Images";
 import ExerciseImage from "../../utils/ExerciseImage";
+import { useFonts, Inter_500Medium } from "@expo-google-fonts/inter";
 
 const numColumns = 2;
 export default function ExerciseSectionScreen({ navigation, route }) {
@@ -35,6 +36,15 @@ export default function ExerciseSectionScreen({ navigation, route }) {
       </Text>
     </Pressable>
   );
+
+  let [fontsLoaded] = useFonts({
+    Inter_500Medium,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.exerciseTitle}>{primaryMuscles}</Text>
@@ -59,10 +69,12 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
-    fontSize: 15,
+    fontSize: 14,
     textAlign: "center",
-    fontWeight: "bold",
+    fontFamily: "Inter_500Medium",
     paddingTop: 20,
+    paddingLeft: 5,
+    paddingRight: 5,
   },
   exerciseContainer: {
     width: 180,
@@ -86,7 +98,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   image: {
-    width: 100, // Adjust width and height as needed
+    width: 100,
     height: 100,
     borderRadius: 10,
     marginVertical: 10,

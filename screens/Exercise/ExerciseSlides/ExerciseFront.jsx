@@ -141,7 +141,7 @@ export default function ExerciseFront({ navigation }) {
             }}
           >
             <Image source={YellowCircle} />
-            <Text style={styles.text}>abdominals</Text>
+            <Text style={styles.text}>Abdominals</Text>
           </Pressable>
         </View>
       </View>

@@ -3,6 +3,11 @@ import { data } from "../../data/data";
 import { useState, useEffect } from "react";
 import { Images } from "../../utils/Images";
 import { ExerciseDImage } from "../../utils/ExerciseImage";
+import {
+  useFonts,
+  Inter_500Medium,
+  Inter_600SemiBold,
+} from "@expo-google-fonts/inter";
 
 export default function ExerciseDetail({ route }) {
   const [imagePaths, setImagePaths] = useState({});
@@ -31,61 +36,54 @@ export default function ExerciseDetail({ route }) {
 
   const formattedString = formatArrayAsNewLines(exerciseDetail.instructions);
 
+  let [fontsLoaded] = useFonts({
+    Inter_500Medium,
+    Inter_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <ScrollView>
         <StatusBar barStyle="light-content" />
         <View style={styles.exerciseContainer}>
-          <Text
-            style={{
-              textAlign: "center",
-              color: "white",
-              fontSize: 20,
-              fontWeight: "bold",
-            }}
-          >
-            {exerciseDetail.name}
-          </Text>
+          <Text style={styles.exerciseName}>{exerciseDetail.name}</Text>
           <ExerciseDImage exerciseId={exerciseDetail.id} />
         </View>
-
         <ScrollView horizontal={true} contentContainerStyle={{ width: 700 }}>
           <View style={[styles.detailContainer, { marginLeft: 30 }]}>
-            <Text
-              style={{
-                fontSize: 20,
-                color: "white",
-                fontWeight: "bold",
-                textAlign: "center",
-                paddingTop: 10,
-              }}
-            >
-              Exercise Details
-            </Text>
-            <Text style={styles.text}>Level: {exerciseDetail.level}</Text>
-            <Text style={styles.text}>Force: {exerciseDetail.force}</Text>
+            <Text style={styles.title}>Exercise Details</Text>
             <Text style={styles.text}>
-              Primary Muscles: {exerciseDetail.primaryMuscles}
+              Level: <Text style={styles.text3}> {exerciseDetail.level} </Text>
+            </Text>
+            <Text style={styles.text}>
+              Force: <Text style={styles.text3}> {exerciseDetail.force} </Text>
+            </Text>
+            <Text style={styles.text}>
+              Primary Muscles:{" "}
+              <Text style={styles.text3}>
+                {" "}
+                {exerciseDetail.primaryMuscles}{" "}
+              </Text>
             </Text>
             <Text style={styles.text}>
               Secondary Muscles:{" "}
-              {exerciseDetail.secondaryMuscles.map((e) => (
-                <Text key={e.id}>{e},</Text>
-              ))}
+              {exerciseDetail.secondaryMuscles.length === 0 ? (
+                <Text style={styles.text3}> N/A </Text>
+              ) : (
+                exerciseDetail.secondaryMuscles.map((e) => (
+                  <Text key={e.id} style={styles.text3}>
+                    {e},
+                  </Text>
+                ))
+              )}
             </Text>
           </View>
           <View style={[styles.detailContainer, { marginLeft: 30 }]}>
-            <Text
-              style={{
-                fontSize: 20,
-                color: "white",
-                fontWeight: "bold",
-                textAlign: "center",
-                paddingTop: 10,
-              }}
-            >
-              Instructions
-            </Text>
+            <Text style={styles.title}>Instructions</Text>
             <Text style={styles.text2}>{formattedString}</Text>
           </View>
         </ScrollView>
@@ -105,20 +103,38 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  exerciseName: {
+    fontSize: 20,
+    color: "white",
+    fontFamily: "Inter_600SemiBold",
+    textAlign: "center",
+  },
+  title: {
+    fontSize: 20,
+    color: "white",
+    fontFamily: "Inter_600SemiBold",
+    textAlign: "center",
+    paddingTop: 10,
+  },
   text: {
     fontSize: 15,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "Inter_500Medium",
     marginTop: 10,
     textAlign: "center",
   },
   text2: {
     fontSize: 15,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "Inter_500Medium",
     marginTop: 10,
     textAlign: "center",
     padding: 10,
+  },
+  text3: {
+    fontSize: 15,
+    color: "#F9C305",
+    fontFamily: "Inter_600SemiBold",
   },
   detailContainer: {
     backgroundColor: "#141619",
