@@ -11,6 +11,11 @@ import { useState, useEffect } from "react";
 import { Images } from "../../utils/Images";
 import { WorkoutImage } from "../../utils/ExerciseImage";
 import Line from "../../images/Line 10.png";
+import {
+  useFonts,
+  Inter_600SemiBold,
+  Inter_700Bold,
+} from "@expo-google-fonts/inter";
 
 export default function WorkoutVariations({ navigation, route }) {
   const [imagePaths, setImagePaths] = useState({});
@@ -30,6 +35,7 @@ export default function WorkoutVariations({ navigation, route }) {
   const exercises = data.filter((exercise) =>
     exercise.primaryMuscles.some((muscle) => primaryMuscles.includes(muscle))
   );
+
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
@@ -39,6 +45,7 @@ export default function WorkoutVariations({ navigation, route }) {
     }
     return array;
   };
+
   const shuffledExercises = shuffleArray(exercises);
   const slicedExercises = shuffledExercises.slice(0, 6);
 
@@ -64,9 +71,18 @@ export default function WorkoutVariations({ navigation, route }) {
     </Pressable>
   );
 
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+    Inter_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
-      <View style={{ marginTop: 30 }}>
+      <View>
         <Text style={styles.title}>{titles}</Text>
         <Text style={styles.titleText}>{text}</Text>
       </View>
@@ -105,24 +121,22 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     fontSize: 15,
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
     width: 130,
   },
   title: {
     color: "#F9C305",
     fontSize: 24,
-    fontWeight: "bold",
     textAlign: "left",
-    fontStyle: "italic",
+    fontFamily: "Inter_700Bold",
   },
   titleText: {
     color: "white",
     fontSize: 15,
     textAlign: "left",
-    fontWeight: "bold",
     paddingTop: 10,
     width: 238,
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
   },
   workoutContainer: {
     width: 376,
@@ -132,7 +146,7 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingTop: 20,
     borderRadius: 8,
-    height: 450,
+    height: 500,
     paddingBottom: 10,
   },
   exerciseContainer: {
@@ -145,15 +159,13 @@ const styles = StyleSheet.create({
   },
   exerciseDurationText: {
     fontSize: 24,
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_700Bold",
     color: "white",
     textAlign: "center",
   },
   exerciseDurationText2: {
     fontSize: 24,
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_700Bold",
     color: "#F9C305",
     textAlign: "center",
     marginTop: 5,
@@ -161,8 +173,7 @@ const styles = StyleSheet.create({
   muscleType: {
     color: "#F9C305",
     fontSize: 15,
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
   },
   titleContainer: {
     justifyContent: "space-between",

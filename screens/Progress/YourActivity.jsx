@@ -1,5 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import {
+  useFonts,
+  Inter_600SemiBold,
+  Inter_700Bold,
+} from "@expo-google-fonts/inter";
 
 export default function YourActivity() {
   return (

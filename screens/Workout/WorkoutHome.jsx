@@ -10,8 +10,21 @@ import React from "react";
 import LegDayImg from "../../images/AdobeStock_536898291.jpeg";
 import PushDayImg from "../../images/AdobeStock_331562231.jpeg";
 import PullDayImg from "../../images/AdobeStock_320459521.jpeg";
+import {
+  useFonts,
+  Inter_600SemiBold,
+  Inter_700Bold,
+} from "@expo-google-fonts/inter";
 
 export default function WorkoutHome({ navigation }) {
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+    Inter_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <ScrollView
@@ -67,11 +80,10 @@ const styles = StyleSheet.create({
   forceTitle: {
     fontSize: 25,
     color: "#F9C305",
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_700Bold",
   },
   forceDesc: {
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
     fontStyle: "italic",
     color: "white",
   },

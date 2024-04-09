@@ -2,8 +2,21 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import Line from "../../images/Line 9.png";
 import Arrow from "../../images/2849832_arrows_navigation_arrow_left_back_icon (1) 1.png";
+import {
+  useFonts,
+  Inter_600SemiBold,
+  Inter_700Bold,
+} from "@expo-google-fonts/inter";
 
 export default function Variations({ text }) {
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+    Inter_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.variationContainer}>
@@ -40,7 +53,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     color: "#F9C305",
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_700Bold",
   },
 });
