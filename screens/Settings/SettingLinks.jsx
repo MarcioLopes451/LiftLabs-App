@@ -1,8 +1,16 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import Arrow from "../../images/2849832_arrows_navigation_arrow_left_back_icon (1) 1.png";
+import { useFonts, Inter_700Bold } from "@expo-google-fonts/inter";
 
 export default function SettingLinks({ text, img }) {
+  let [fontsLoaded] = useFonts({
+    Inter_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.variationContainer}>
@@ -39,7 +47,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "Inter_700Bold",
   },
   img: {
     width: 30,

@@ -1,7 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
 export default function History() {
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.historyText}>History</Text>
@@ -40,8 +48,7 @@ const styles = StyleSheet.create({
   historyText: {
     color: "white",
     fontSize: 20,
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
   },
   historyContainer: {
     gap: 20,
@@ -57,8 +64,7 @@ const styles = StyleSheet.create({
   historyWorkoutText: {
     color: "white",
     fontSize: 20,
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
   },
   historyDateContainer: {
     flexDirection: "row",
@@ -68,11 +74,11 @@ const styles = StyleSheet.create({
   historyDateTextOne: {
     color: "white",
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
   },
   historyDateTextTwo: {
     color: "#F9C305",
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
   },
 });

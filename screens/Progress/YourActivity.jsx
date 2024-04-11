@@ -1,12 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import {
-  useFonts,
-  Inter_600SemiBold,
-  Inter_700Bold,
-} from "@expo-google-fonts/inter";
+import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
 export default function YourActivity() {
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.activityContainerTitle}>
@@ -65,8 +68,7 @@ const styles = StyleSheet.create({
   activityContainerText: {
     color: "white",
     fontSize: 20,
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
   },
   activityContainerBox: {
     width: 170,
@@ -89,13 +91,11 @@ const styles = StyleSheet.create({
   textOne: {
     fontSize: 30,
     color: "#F9C305",
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
   },
   textTwo: {
     fontSize: 16,
     color: "white",
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
   },
 });
