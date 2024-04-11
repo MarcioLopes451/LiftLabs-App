@@ -2,8 +2,16 @@ import { Pressable, StyleSheet, Text, View, Modal, Image } from "react-native";
 import React from "react";
 import AchievementsLogo from "../../images/5519111_achievement_air forces_army_awards_badge_icon.png";
 import CloseBtn from "../../images/211651_close_round_icon (1).png";
+import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
 export default function AchievementsModal({ isOpen, onClose }) {
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <Modal
       animationType="slide"
@@ -59,15 +67,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     color: "#F9C305",
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
   },
   text: {
     fontSize: 16,
     color: "white",
-    fontWeight: "bold",
     textAlign: "center",
     marginTop: 10,
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
     width: 190,
     lineHeight: 25,
   },
@@ -77,6 +84,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     opacity: 0.6,
     marginTop: 10,
+    fontFamily: "Inter_600SemiBold",
   },
   shareButton: {
     width: 300,
@@ -91,7 +99,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   shareText: {
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
     fontSize: 20,
   },
   closeContainer: {

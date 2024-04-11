@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import React, { useState } from "react";
 import AchievementsLogo from "../../images/5519111_achievement_air forces_army_awards_badge_icon.png";
 import AchievementsModal from "./AchievementsModal";
+import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
 export default function Achievements() {
   const [modal, setModal] = useState(false);
@@ -10,6 +11,13 @@ export default function Achievements() {
     setModal((prev) => !prev);
   };
 
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.achievementsContainer}>
@@ -45,8 +53,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     color: "#F9C305",
-    fontWeight: "bold",
-    fontStyle: "italic",
+    fontFamily: "Inter_600SemiBold",
   },
   img: {
     width: 80,
