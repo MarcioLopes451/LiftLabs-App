@@ -4,10 +4,10 @@ import SplashScreen from "./screens/SplashScreen";
 import HomeScreen from "./screens/Home/HomeScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Logo from "./images/Liftlabs (1)-cropped 4.png";
-import ExerciseImg from "./images/6643367_diet_dumbbells_exercise_fitness_gym_icon.png";
-import ProgressImg from "./images/4308198_chart_flowchart_graph_growth_increase_icon.png";
-import WorkoutImg from "./images/728933_document_edit_file_page_paper_icon.png";
-import SettingsImg from "./images/2849830_multimedia_options_setting_settings_gear_icon.png";
+import ExerciseImg from "./images/6643367_diet_dumbbells_exercise_fitness_gym_icon (2).png";
+import ProgressImg from "./images/4308198_chart_flowchart_graph_growth_increase_icon (1).png";
+import WorkoutImg from "./images/728933_document_edit_file_page_paper_icon (1).png";
+import SettingsImg from "./images/2849830_multimedia_options_setting_settings_gear_icon (2).png";
 import { Image, View, Text } from "react-native";
 import ExerciseScreen from "./screens/Exercise/ExerciseScreen";
 import WorkoutScreen from "./screens/Workout/WorkoutScreen";
@@ -46,6 +46,8 @@ export default function App() {
           }),
           tabBarStyle: {
             backgroundColor: "#141619",
+            paddingTop: 5,
+            borderTopColor: "#404040",
           },
           tabBarActiveTintColor: "#F9C305",
           tabBarInactiveTintColor: "white",
@@ -77,8 +79,8 @@ export default function App() {
               <Image
                 source={ExerciseImg}
                 style={{
-                  width: 40,
-                  height: 30,
+                  width: 32,
+                  height: 32,
                   tintColor: focused ? null : "white",
                 }}
               />
@@ -94,8 +96,8 @@ export default function App() {
               <Image
                 source={WorkoutImg}
                 style={{
-                  width: 40,
-                  height: 30,
+                  width: 24,
+                  height: 24,
                   tintColor: focused ? null : "white",
                 }}
               />
@@ -110,8 +112,8 @@ export default function App() {
               <Image
                 source={ProgressImg}
                 style={{
-                  width: 40,
-                  height: 30,
+                  width: 35,
+                  height: 35,
                   tintColor: focused ? null : "white",
                 }}
               />
@@ -152,8 +154,8 @@ export default function App() {
               <Image
                 source={SettingsImg}
                 style={{
-                  width: 40,
-                  height: 30,
+                  width: 28,
+                  height: 28,
                   tintColor: focused ? null : "white",
                 }}
               />
