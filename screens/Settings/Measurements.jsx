@@ -1,7 +1,15 @@
 import { StyleSheet, Text, View, Pressable, RadioButton } from "react-native";
 import React from "react";
+import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
 export default function Measurements() {
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.Profilecontainer}>
@@ -41,16 +49,9 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   text: {
-    fontSize: 20,
+    fontSize: 16,
     color: "white",
-    fontWeight: "bold",
-  },
-  profileText: {
-    fontSize: 20,
-    color: "white",
-    fontWeight: "bold",
-    textDecorationLine: "underline",
-    marginTop: 20,
+    fontFamily: "Inter_600SemiBold",
   },
   optionsBox: {
     backgroundColor: "#1B2126",
@@ -62,7 +63,8 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   optionsText: {
+    fontSize: 14,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
   },
 });

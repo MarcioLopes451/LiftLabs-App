@@ -1,8 +1,16 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import React from "react";
 import ProfileImg from "../../images/115759_camera_icon (1).png";
+import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
 export default function MyProfile() {
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <Image source={ProfileImg} />
@@ -59,18 +67,18 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   text: {
-    fontSize: 20,
+    fontSize: 16,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
   },
   img: {
     width: 30,
     height: 30,
   },
   profileText: {
-    fontSize: 20,
+    fontSize: 18,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
     textDecorationLine: "underline",
     marginTop: 20,
   },
@@ -84,7 +92,8 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   optionsText: {
+    fontSize: 16,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
   },
 });

@@ -33,7 +33,11 @@ export default function ExerciseHome({ navigation }) {
       {showComponent2 && <ExerciseBack navigation={navigation} />}
       <View style={styles.swipeContainer}>
         <View style={{ justifyContent: "center", alignItems: "center" }}>
-          <Text style={styles.text}>Swipe</Text>
+          {showComponent1 ? (
+            <Text style={styles.text}>Front</Text>
+          ) : (
+            <Text style={styles.text}>Back</Text>
+          )}
           <View style={styles.swipeBtn}>
             <Pressable onPress={showFirstComponent}>
               <Image source={LeftBtn} />

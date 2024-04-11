@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Pressable, Switch } from "react-native";
 import React, { useState } from "react";
+import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
 export default function WorkoutReminders() {
   const [switchStates, setSwitchStates] = useState({
@@ -19,6 +20,13 @@ export default function WorkoutReminders() {
     }));
   };
 
+  let [fontsLoaded] = useFonts({
+    Inter_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.Profilecontainer}>
@@ -66,17 +74,11 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   text: {
-    fontSize: 20,
+    fontSize: 18,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
   },
-  profileText: {
-    fontSize: 20,
-    color: "white",
-    fontWeight: "bold",
-    textDecorationLine: "underline",
-    marginTop: 20,
-  },
+
   optionsBox: {
     backgroundColor: "#1B2126",
     width: 60,
@@ -87,7 +89,8 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   optionsText: {
+    fontSize: 16,
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "Inter_600SemiBold",
   },
 });

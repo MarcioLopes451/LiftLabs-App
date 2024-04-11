@@ -5,11 +5,11 @@ import StarImg from "../../images/216411_star_icon (3).png";
 import QuestionImg from "../../images/3994396_ask_faq_help_mark_question_icon.png";
 import InstagramImg from "../../images/8679433_instagram_fill_icon.png";
 import TiktokImg from "../../images/8666453_tiktok_icon.png";
-import { useFonts, Inter_700Bold } from "@expo-google-fonts/inter";
+import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
 export default function SocialLinks() {
   let [fontsLoaded] = useFonts({
-    Inter_700Bold,
+    Inter_600SemiBold,
   });
 
   if (!fontsLoaded) {
@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   text: {
-    fontSize: 20,
+    fontSize: 18,
     color: "white",
-    fontFamily: "Inter_700Bold",
+    fontFamily: "Inter_600SemiBold",
   },
   img: {
     width: 30,

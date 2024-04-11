@@ -27,6 +27,7 @@ export default function WorkoutScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
+                marginBottom: 10,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
@@ -37,8 +38,7 @@ export default function WorkoutScreen() {
           ),
           headerStyle: {
             backgroundColor: "#1B2126",
-            borderBottomWidth: 1,
-            borderBottomColor: "gray",
+            borderBottomColor: "#404040",
           },
           headerTitleStyle: {
             color: "white",
@@ -54,8 +54,7 @@ export default function WorkoutScreen() {
           },
           headerStyle: {
             backgroundColor: "#1B2126",
-            borderBottomWidth: 1,
-            borderBottomColor: "gray",
+            borderBottomColor: "#404040",
           },
           headerTintColor: "white",
           headerRight: () => (
@@ -66,6 +65,7 @@ export default function WorkoutScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
+                marginBottom: 10,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
@@ -85,8 +85,7 @@ export default function WorkoutScreen() {
           },
           headerStyle: {
             backgroundColor: "#1B2126",
-            borderBottomWidth: 1,
-            borderBottomColor: "gray",
+            borderBottomColor: "#404040",
           },
           headerTintColor: "white",
           headerRight: () => (
@@ -97,6 +96,7 @@ export default function WorkoutScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
+                marginBottom: 10,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
@@ -116,8 +116,7 @@ export default function WorkoutScreen() {
           },
           headerStyle: {
             backgroundColor: "#1B2126",
-            borderBottomWidth: 1,
-            borderBottomColor: "gray",
+            borderBottomColor: "#404040",
           },
           headerTintColor: "white",
           headerRight: () => (
@@ -128,6 +127,7 @@ export default function WorkoutScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
+                marginBottom: 10,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
@@ -147,8 +147,7 @@ export default function WorkoutScreen() {
           },
           headerStyle: {
             backgroundColor: "#1B2126",
-            borderBottomWidth: 1,
-            borderBottomColor: "gray",
+            borderBottomColor: "#404040",
           },
           headerTintColor: "white",
           headerRight: () => (
@@ -159,6 +158,7 @@ export default function WorkoutScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
+                marginBottom: 10,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
@@ -178,8 +178,7 @@ export default function WorkoutScreen() {
           },
           headerStyle: {
             backgroundColor: "#1B2126",
-            borderBottomWidth: 1,
-            borderBottomColor: "gray",
+            borderBottomColor: "#404040",
           },
           headerTintColor: "white",
           headerRight: () => (
@@ -190,6 +189,7 @@ export default function WorkoutScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
+                marginBottom: 10,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
