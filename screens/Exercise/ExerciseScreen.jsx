@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, Platform } from "react-native";
 import ExerciseHome from "./ExerciseHome";
 import ExerciseSectionScreen from "./ExerciseSectionScreen";
 import ExerciseDetail from "./ExerciseDetail";
@@ -23,7 +23,7 @@ export default function ExerciseScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
-                marginBottom: 10,
+                marginBottom: Platform.OS === "ios" ? 10 : 0,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
@@ -61,7 +61,7 @@ export default function ExerciseScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
-                marginBottom: 10,
+                marginBottom: Platform.OS === "ios" ? 10 : 0,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
@@ -92,7 +92,7 @@ export default function ExerciseScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
-                marginBottom: 10,
+                marginBottom: Platform.OS === "ios" ? 10 : 0,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />

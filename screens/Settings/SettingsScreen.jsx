@@ -1,4 +1,4 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Platform } from "react-native";
 import React from "react";
 import Crown from "../../images/8541713_crown_icon.png";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -24,7 +24,7 @@ export default function SettingsScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
-                marginBottom: 10,
+                marginBottom: Platform.OS === "ios" ? 10 : 0,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
@@ -62,7 +62,7 @@ export default function SettingsScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
-                marginBottom: 10,
+                marginBottom: Platform.OS === "ios" ? 10 : 0,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
@@ -93,7 +93,7 @@ export default function SettingsScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
-                marginBottom: 10,
+                marginBottom: Platform.OS === "ios" ? 10 : 0,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />
@@ -124,7 +124,7 @@ export default function SettingsScreen() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginRight: 10,
-                marginBottom: 10,
+                marginBottom: Platform.OS === "ios" ? 10 : 0,
               }}
             >
               <Image source={Crown} style={{ width: 25, height: 25 }} />

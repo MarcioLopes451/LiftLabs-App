@@ -8,7 +8,7 @@ import ExerciseImg from "./images/6643367_diet_dumbbells_exercise_fitness_gym_ic
 import ProgressImg from "./images/4308198_chart_flowchart_graph_growth_increase_icon (1).png";
 import WorkoutImg from "./images/728933_document_edit_file_page_paper_icon (1).png";
 import SettingsImg from "./images/2849830_multimedia_options_setting_settings_gear_icon (2).png";
-import { Image, View, Text } from "react-native";
+import { Image, View, Text, Platform } from "react-native";
 import ExerciseScreen from "./screens/Exercise/ExerciseScreen";
 import WorkoutScreen from "./screens/Workout/WorkoutScreen";
 import ProgressScreen from "./screens/Progress/ProgressScreen";
@@ -127,7 +127,7 @@ export default function App() {
                   alignItems: "center",
                   flexDirection: "column",
                   marginRight: 10,
-                  marginBottom: 10,
+                  marginBottom: Platform.OS === "ios" ? 10 : 0,
                 }}
               >
                 <Image source={Crown} style={{ width: 25, height: 25 }} />

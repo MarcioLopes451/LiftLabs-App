@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Platform } from "react-native";
 import { Video } from "expo-av";
 import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
 
@@ -41,10 +41,9 @@ export default function WorkoutOfTheDay() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#141619",
-    height: 200,
     alignSelf: "stretch",
-    paddingTop: 60,
-    height: 390,
+    paddingTop: Platform.OS === "ios" ? 60 : 10,
+    height: Platform.OS === "ios" ? 390 : 350,
     borderBottomRightRadius: 30,
     borderBottomLeftRadius: 30,
   },
