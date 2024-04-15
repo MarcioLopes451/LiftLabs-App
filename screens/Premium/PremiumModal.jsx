@@ -6,6 +6,7 @@ import {
   Modal,
   StatusBar,
   Image,
+  Platform,
 } from "react-native";
 import React from "react";
 import { useFonts, Inter_600SemiBold } from "@expo-google-fonts/inter";
@@ -65,7 +66,7 @@ export default function PremiumModal({ isOpen, onClose }) {
                   backgroundColor: "#F9C305",
                   color: "black",
                   borderWidth: 0,
-                  paddingTop: 5,
+                  paddingTop: Platform.OS === "ios" ? 5 : 3,
                 }}
               />
               <PriceBoxes text={"Monthly"} price={"£16.99"} />
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   PremiumContainer: {
-    marginTop: -200,
+    marginTop: Platform.OS === "ios" ? -200 : -250,
     paddingLeft: 10,
     paddingRight: 10,
   },
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
   },
   closeContainer: {
     position: "absolute",
-    top: 40,
+    top: Platform.OS === "ios" ? 40 : 20,
     right: 20,
     zIndex: 99,
   },

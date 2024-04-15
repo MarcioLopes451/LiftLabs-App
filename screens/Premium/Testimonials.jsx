@@ -1,14 +1,42 @@
-import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
-import React from "react";
-import Stars from "../../images/5star 2.png";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  FlatList,
+  Animated,
+} from "react-native";
+import React, { useRef, useState } from "react";
 import {
   useFonts,
   Inter_600SemiBold,
   Inter_700Bold,
   Inter_500Medium,
 } from "@expo-google-fonts/inter";
+import Paginator from "./Paginator";
+import { TestimonialList } from "./TestimonialList";
 
 export default function Testimonials() {
+  const [index, setIndex] = useState(0);
+  const scrollX = useRef(new Animated.Value(0)).current;
+  const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
+  const slidesRef = useRef(null);
+
+  const viewableItemsChanged = useRef(({ viewableItems }) => {
+    setIndex(viewableItems[0].index);
+  }).current;
+
+  const renderItem = ({ item }) => (
+    <View style={[styles.testimonialContainer, { marginHorizontal: 30 }]}>
+      <View style={styles.titleSection}>
+        <Text style={styles.titleText}>{item.title}</Text>
+        <Text style={styles.titleName}>- {item.name}</Text>
+      </View>
+      <Image source={item.image} style={{ marginTop: 10 }} />
+      <Text style={styles.text}>{item.description}</Text>
+    </View>
+  );
+
   let [fontsLoaded] = useFonts({
     Inter_600SemiBold,
     Inter_700Bold,
@@ -20,19 +48,23 @@ export default function Testimonials() {
   }
   return (
     <View style={styles.container}>
-      <ScrollView horizontal>
-        <View style={styles.testimonialContainer}>
-          <View style={styles.titleSection}>
-            <Text style={styles.titleText}>Best Gym Workout App</Text>
-            <Text style={styles.titleName}>- John</Text>
-          </View>
-          <Image source={Stars} style={{ marginTop: 10 }} />
-          <Text style={styles.text}>
-            I've never felt more motivated and empowered to achieve my fitness
-            goals.
-          </Text>
-        </View>
-      </ScrollView>
+      <FlatList
+        data={TestimonialList}
+        renderItem={renderItem}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        pagingEnabled
+        bounces={false}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+          { useNativeDriver: false }
+        )}
+        scrollEventThrottle={32}
+        onViewableItemsChanged={viewableItemsChanged}
+        viewabilityConfig={viewConfig}
+        ref={slidesRef}
+      />
+      <Paginator data={TestimonialList} scrollX={scrollX} />
     </View>
   );
 }
@@ -42,6 +74,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 30,
+    marginLeft: 10,
+    marginRight: 10,
   },
   testimonialContainer: {
     backgroundColor: "#2e3439",

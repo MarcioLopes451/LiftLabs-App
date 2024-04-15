@@ -8,17 +8,23 @@ import ExerciseImg from "./images/6643367_diet_dumbbells_exercise_fitness_gym_ic
 import ProgressImg from "./images/4308198_chart_flowchart_graph_growth_increase_icon (1).png";
 import WorkoutImg from "./images/728933_document_edit_file_page_paper_icon (1).png";
 import SettingsImg from "./images/2849830_multimedia_options_setting_settings_gear_icon (2).png";
-import { Image, View, Text, Platform } from "react-native";
+import { Image, View, Text, Platform, Pressable } from "react-native";
 import ExerciseScreen from "./screens/Exercise/ExerciseScreen";
 import WorkoutScreen from "./screens/Workout/WorkoutScreen";
 import ProgressScreen from "./screens/Progress/ProgressScreen";
 import SettingsScreen from "./screens/Settings/SettingsScreen";
 import Crown from "./images/8541713_crown_icon.png";
+import PremiumModal from "./screens/Premium/PremiumModal";
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [modal, setModal] = useState(false);
+
+  const openModal = () => {
+    setModal((prev) => !prev);
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -120,25 +126,31 @@ export default function App() {
             ),
             headerTitleAlign: "left",
             headerRight: () => (
-              <View
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  flexDirection: "column",
-                  marginRight: 10,
-                  marginBottom: Platform.OS === "ios" ? 10 : 0,
-                }}
-              >
-                <Image source={Crown} style={{ width: 25, height: 25 }} />
-                <Text style={{ color: "#F9C305", fontWeight: "bold" }}>
-                  Premium
-                </Text>
+              <View>
+                <Pressable onPress={openModal}>
+                  <View
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexDirection: "column",
+                      marginRight: 10,
+                      marginBottom: Platform.OS === "ios" ? 15 : 0,
+                    }}
+                  >
+                    <Image source={Crown} style={{ width: 25, height: 25 }} />
+                    <Text style={{ color: "#F9C305", fontWeight: "bold" }}>
+                      Premium
+                    </Text>
+                  </View>
+                </Pressable>
+                {modal && <PremiumModal isOpen={modal} onClose={openModal} />}
               </View>
             ),
             headerStyle: {
               backgroundColor: "#1B2126",
-              borderBottomColor: "#404040",
+              shadowColor: "#404040",
+              elevation: 0,
             },
             headerTitleStyle: {
               color: "white",

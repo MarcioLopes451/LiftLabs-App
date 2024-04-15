@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import {
   useFonts,
@@ -18,13 +18,15 @@ export default function PriceBoxes({ text, style, price, subtext }) {
     return null;
   }
   return (
-    <View style={[styles.container, style]}>
-      <View style={styles.variationContainer}>
-        <View>
-          <Text style={[styles.text, style]}>{text}</Text>
-          <Text style={subtext}>{subtext}</Text>
+    <View style={{ justifyContent: "center", alignItems: "center" }}>
+      <View style={[styles.container, style]}>
+        <View style={styles.variationContainer}>
+          <View>
+            <Text style={[styles.text, style]}>{text}</Text>
+            <Text style={subtext}>{subtext}</Text>
+          </View>
+          <Text style={styles.text}>{price}</Text>
         </View>
-        <Text style={styles.text}>{price}</Text>
       </View>
     </View>
   );
@@ -39,6 +41,7 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderWidth: 2,
     height: 60,
+    width: 350,
   },
   variationContainer: {
     display: "flex",
