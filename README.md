@@ -1,10 +1,19 @@
 <div align="center">
-	<img src="./src/Images/Liftlabs (1)-cropped 4.png" width="25%">
+	<img src="./images/Liftlabs (1)-cropped 4.png" width="25%">
 </div>
 
 ## About the Project
 
-LiftLabs is a comprehensive fitness platform designed to provide users with a wide range of exercises and personalized workout plans tailored to their individual needs, empowering them to reach their fitness objectives with ease and efficiency.
+The LiftLabs App is a comprehensive fitness platform designed to provide users with a wide range of exercises and personalized workout plans tailored to their individual needs, empowering them to reach their fitness objectives with ease and efficiency.
+
+## Main Components
+
+- Home Page
+- Exercise Section
+- Workout Section
+- Progress Section
+- Settings
+- Premium
 
 Credits for the design goes to [RadiusTheme](https://www.radiustheme.com/)
 
